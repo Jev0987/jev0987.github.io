@@ -20,15 +20,22 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="爆炸头爆炸">
-<meta property="og:url" content="http://example.com/archives/2025/12/index.html">
+  <meta name="description" content="简单记录下原子变量的用法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="标准输入、标准输出和标准错误">
+<meta property="og:url" content="http://example.com/2025/12/10/%E6%A0%87%E5%87%86%E8%BE%93%E5%85%A5%E5%92%8C%E6%A0%87%E5%87%86%E8%BE%93%E5%87%BA/index.html">
 <meta property="og:site_name" content="爆炸头爆炸">
+<meta property="og:description" content="简单记录下原子变量的用法">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-12-09T17:32:18.047Z">
+<meta property="article:modified_time" content="2025-12-09T17:33:14.634Z">
 <meta property="article:author" content="Jevin Zhan">
+<meta property="article:tag" content="cpp">
+<meta property="article:tag" content="基础">
+<meta property="article:tag" content="linux">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/archives/2025/12/">
+<link rel="canonical" href="http://example.com/2025/12/10/%E6%A0%87%E5%87%86%E8%BE%93%E5%85%A5%E5%92%8C%E6%A0%87%E5%87%86%E8%BE%93%E5%87%BA/">
 
 
 <script id="page-configurations">
@@ -36,12 +43,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>归档 | 爆炸头爆炸</title>
+  <title>标准输入、标准输出和标准错误 | 爆炸头爆炸</title>
   
 
 
@@ -141,70 +148,133 @@
         <div class="content-wrap">
           
 
-          <div class="content archive">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <span class="collection-header">嗯..! 目前共计 2 篇日志。 继续努力。</span>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2025/12/10/%E6%A0%87%E5%87%86%E8%BE%93%E5%85%A5%E5%92%8C%E6%A0%87%E5%87%86%E8%BE%93%E5%87%BA/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Jevin Zhan">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="爆炸头爆炸">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          标准输入、标准输出和标准错误
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2025-12-10 01:32:18 / 修改时间：01:33:14" itemprop="dateCreated datePublished" datetime="2025-12-10T01:32:18+08:00">2025-12-10</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CPP/" itemprop="url" rel="index"><span itemprop="name">CPP</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CPP/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>866</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+            <div class="post-description">简单记录下原子变量的用法</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2025</span>
+        <ul>
+<li>​<strong>标准输入 (stdin - 文件描述符 0)​</strong>​：程序<strong>读取</strong>数据的默认通道。好比程序的“耳朵”。</li>
+<li>​<strong>标准输出 (stdout - 文件描述符 1)​</strong>​：程序<strong>写入</strong>正常输出结果的默认通道。好比程序的“嘴巴”。</li>
+<li>​<strong>标准错误 (stderr - 文件描述符 2)​</strong>​：程序<strong>写入</strong>错误信息和诊断信息的默认通道。好比程序的“另一张专门抱怨的嘴巴”。</li>
+</ul>
+<p>子进程通常从其父进程继承这些文件。 所有三个文件初始指定给工作站（0 给键盘，1 和 2 给显示器）。 在控制传递给命令前，Shell 允许它们重定向到其他处。<br>输入命令时，如果未给出文件名，那么您的键盘是_标准输入_，有时表示为 _stdin_。 当命令完成时，结果显示在您的屏幕上。<br>您的屏幕是_标准输出_，有时表示为 _stdout_。 缺省情况下，命令从标准输入提取输入，并将结果发送到标准输出。<br>错误消息定向到标准错误，有时指示为 _stderr_。 缺省情况下，这是您的屏幕。<br>输入和输出的这些缺省操作可以不同。 可以将文件用作输入，并将命令的结果写到文件。 这称为输入&#x2F;输出重定向。<br>来自命令的输出（通常转至显示设备）可改为重定向到文件。 这称为_输出重定向_。 当具有很多很难在屏幕上读取的输出时，或这当想要将多个文件放在一起以创建一个大的文件时，这很有用。<br>尽管使用不及输出重定向那样多，但命令的输入（通常来自键盘）也可以从文件重定向。 这称为_输入重定向_。 输入的重定向让您预先准备文件，然后使命令读文件。</p>
+<p>stdio.h</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* Standard streams.  */</span></span><br><span class="line"><span class="keyword">extern</span> FILE *stdin;		<span class="comment">/* Standard input stream.  */</span></span><br><span class="line"><span class="keyword">extern</span> FILE *stdout;		<span class="comment">/* Standard output stream.  */</span></span><br><span class="line"><span class="keyword">extern</span> FILE *stderr;		<span class="comment">/* Standard error output stream.  */</span></span><br><span class="line"><span class="comment">/* C89/C99 say they&#x27;re macros.  Make them happy.  */</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> stdin stdin</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> stdout stdout</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> stderr stderr</span></span><br></pre></td></tr></table></figure>
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    
+    
+    
+        
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2025-12-10T01:32:18+08:00"
-              content="2025-12-10">
-          12-10
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2025/12/10/%E6%A0%87%E5%87%86%E8%BE%93%E5%85%A5%E5%92%8C%E6%A0%87%E5%87%86%E8%BE%93%E5%87%BA/" itemprop="url">
-            <span itemprop="name">标准输入、标准输出和标准错误</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2025-12-09T01:50:07+08:00"
-              content="2025-12-09">
-          12-09
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2025/12/09/%E5%8E%9F%E5%AD%90%E5%8F%98%E9%87%8Fatomic/" itemprop="url">
-            <span itemprop="name">原子变量atomic的用法</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Jevin Zhan
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://example.com/2025/12/10/%E6%A0%87%E5%87%86%E8%BE%93%E5%85%A5%E5%92%8C%E6%A0%87%E5%87%86%E8%BE%93%E5%87%BA/" title="标准输入、标准输出和标准错误">http://example.com/2025/12/10/标准输入和标准输出/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
 
 
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/cpp/" rel="tag"># cpp</a>
+              <a href="/tags/%E5%9F%BA%E7%A1%80/" rel="tag"># 基础</a>
+              <a href="/tags/linux/" rel="tag"># linux</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2025/12/09/%E5%8E%9F%E5%AD%90%E5%8F%98%E9%87%8Fatomic/" rel="prev" title="原子变量atomic的用法">
+      <i class="fa fa-chevron-left"></i> 原子变量atomic的用法
+    </a></div>
+      <div class="post-nav-item"></div>
     </div>
-  </div>
+      </footer>
+    
+  </article>
   
   
-  
-
   
 
 
