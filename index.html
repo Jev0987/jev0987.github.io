@@ -135,7 +135,7 @@
         </a>
       </div>
       <div class="site-state-item site-state-categories">
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">1</span>
         <span class="site-state-item-name">分类</span>
       </div>
       <div class="site-state-item site-state-tags">
@@ -165,7 +165,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2026/02/24/AddressSanitizer-%E4%BB%8B%E7%BB%8D%E5%92%8C%E4%BD%BF%E7%94%A8/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2026/02/25/AddressSanitizer-%E4%BB%8B%E7%BB%8D%E5%92%8C%E4%BD%BF%E7%94%A8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -183,7 +183,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2026/02/24/AddressSanitizer-%E4%BB%8B%E7%BB%8D%E5%92%8C%E4%BD%BF%E7%94%A8/" class="post-title-link" itemprop="url">AddressSanitizer 介绍和使用</a>
+          <a href="/2026/02/25/AddressSanitizer-%E4%BB%8B%E7%BB%8D%E5%92%8C%E4%BD%BF%E7%94%A8/" class="post-title-link" itemprop="url">AddressSanitizer 介绍和使用</a>
         </h2>
 
         <div class="post-meta-container">
@@ -194,7 +194,16 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2026-02-24 23:56:46" itemprop="dateCreated datePublished" datetime="2026-02-24T23:56:46+08:00">2026-02-24</time>
+      <time title="创建时间：2026-02-25 00:17:11" itemprop="dateCreated datePublished" datetime="2026-02-25T00:17:11+08:00">2026-02-25</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/CPP%E7%9F%A5%E8%AF%86%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">CPP知识库</span></a>
+        </span>
     </span>
 
   
@@ -222,7 +231,8 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>#内存泄漏 #cpp #android #常用操作 # 简单介绍 <a target="_blank" rel="noopener" href="https://www.bynav.com/cn/resource/bywork/healthy-work/70.html">AddressSanitizer使用介绍</a></p>
+          <h1 id="简单介绍">简单介绍</h1>
+<p><a target="_blank" rel="noopener" href="https://www.bynav.com/cn/resource/bywork/healthy-work/70.html">AddressSanitizer使用介绍</a></p>
 <p><a target="_blank" rel="noopener" href="https://github.com/google/sanitizers/wiki/AddressSanitizer">AddressSanitizer
 github wiki</a></p>
 <p>动态运行库 (Run-time library) 替换 <code>malloc</code> 和
@@ -251,7 +261,7 @@ memory)以及将malloc,free等系统调用函数hook住。</p>
 <p>该算法的思路是：如果想防住<strong>Buffer
 Overflow</strong>漏洞，只需要在每块内存区域右端（或两端，能防overflow和underflow）加一块区域（RedZone），使RedZone的区域的影子内存（Shadow
 Memory)设置为不可写即可。具体的示意图如下图所示。</p>
-<p><img src="/.com//assets/image-1.png"></p>
+<p><img src="/images/AddressSanitizer-%E4%BB%8B%E7%BB%8D%E5%92%8C%E4%BD%BF%E7%94%A8/AddressSanitizer-%E4%BB%8B%E7%BB%8D%E5%92%8C%E4%BD%BF%E7%94%A8-1.png"></p>
 <p>虚拟地址空间被分为两个不互相重叠的区域：</p>
 <ul>
 <li>主应用内存（Mem）：这部分内存由常规的应用程序代码使用；</li>
@@ -401,7 +411,7 @@ CPU 执行最快的两条指令。每次指针读写前，CPU 只需要 1
 <code>0x000080000000</code>。</p>
 <p>如果你去查上面的 64 位分区表，你会发现 <code>0x000080000000</code>
 完美地落在了 <strong>LowShadow</strong> 的区间内！</p>
-<p><img src="/images/image.png"></p>
+<p><img src="/images/AddressSanitizer-%E4%BB%8B%E7%BB%8D%E5%92%8C%E4%BD%BF%E7%94%A8/AddressSanitizer-%E4%BB%8B%E7%BB%8D%E5%92%8C%E4%BD%BF%E7%94%A8-2.png"></p>
 <h3 id="堆栈信息stack">堆栈信息（Stack）</h3>
 <p>为了获取栈缓冲溢出信息，Asan 在代码中会做如下插桩：</p>
 <p>原始代码： <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">foo</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="type">char</span> a[<span class="number">8</span>];</span><br><span class="line">  ...</span><br><span class="line">  <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
@@ -586,11 +596,18 @@ C++ 中，如果你连指针都弄丢了，这块内存就永远不可能被释�
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2026-02-25 00:02:29" itemprop="dateModified" datetime="2026-02-25T00:02:29+08:00">2026-02-25</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/CPP/" itemprop="url" rel="index"><span itemprop="name">CPP</span></a>
+          <a href="/categories/CPP%E7%9F%A5%E8%AF%86%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">CPP知识库</span></a>
         </span>
     </span>
 
@@ -686,15 +703,18 @@ C++ 中，如果你连指针都弄丢了，这块内存就永远不可能被释�
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2026-02-25 00:02:43" itemprop="dateModified" datetime="2026-02-25T00:02:43+08:00">2026-02-25</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/CPP/" itemprop="url" rel="index"><span itemprop="name">CPP</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/CPP/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+          <a href="/categories/CPP%E7%9F%A5%E8%AF%86%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">CPP知识库</span></a>
         </span>
     </span>
 
